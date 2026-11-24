@@ -1,0 +1,23 @@
+{
+  "scope": "2-D projected geometry plus separate illustrative electrochemical scalings",
+  "generations": 7,
+  "children_per_node": 3,
+  "n_segments": 1093,
+  "length_shrink": 0.65,
+  "radius_shrink": 0.65,
+  "projected_box_slope_default": 1.514,
+  "projected_box_slope_depth4_median_10seeds": 1.072,
+  "projected_box_slope_depth8_median_10seeds": 1.628,
+  "ideal_similarity_dimension_from_branch_count_and_length_shrink": 2.55,
+  "exceeds_2d_embedding_dimension": true,
+  "surface_multiplier_per_generation": 1.2675,
+  "material_volume_multiplier_per_generation": 0.8239,
+  "surface_efficient_radius_window": [
+    0.5128,
+    0.7161
+  ],
+  "generation5_local_charge_time_ratio": 0.116,
+  "centreline_length_ratio_at_max_depth": 103.306,
+  "material_weighted_root_path_ratio_at_max_depth": 1.597,
+  "surface_to_volume_proxy_at_max_depth": 123.791
+}

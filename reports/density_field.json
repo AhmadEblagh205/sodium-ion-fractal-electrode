@@ -1,0 +1,18 @@
+{
+  "resolution": 200,
+  "segments": 1093,
+  "analytic_material_volume": 0.04530123,
+  "field_integral": 0.04530123,
+  "relative_conservation_error": 0.0,
+  "analytic_centroid": [
+    -0.0005003300784965002,
+    -1.3091974628429142
+  ],
+  "raster_centroid": [
+    -0.0005003300784963654,
+    -1.3091974628429153
+  ],
+  "centroid_error": 0.0,
+  "centroid_error_cell_diagonals": 0.0,
+  "occupied_cell_fraction": 0.2566
+}
