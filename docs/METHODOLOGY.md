@@ -75,3 +75,17 @@ The resulting field is a generic spatial representation for downstream modelling
 ## Literature context
 
 The original design idea was informed by work such as G. Turon Teixidor *et al.*, “Modeling fractal electrodes for Li-ion batteries,” *Electrochimica Acta* 54 (2009) 5928–5936, DOI: 10.1016/j.electacta.2009.05.060. That work models three-dimensional non-deterministic branching structures composed of cylindrical elements. The current repository uses a simpler 2-D projected geometry and is explicit about that difference.
+
+## Notes moved from the README
+
+Three quantities had been conflated in the original repository: the box-counting slope of a finite 2-D projected tree, the ideal self-similar quantity log(b)/log(1/lambda), and the De-Gennes dimension D in Q ~ t^((3-D)/2), which is conventionally defined for a surface embedded in 3-D. For b=3 and lambda=0.65 the ideal expression is about 2.55. That can be a 3-D scaling quantity but cannot be the dimension of a non-overlapping self-similar set in the rendered plane. Across ten random seeds the median projected box-counting slope rises from about 1.07 at depth 4 to 1.63 at depth 8, so I report it as a finite-scale slope and not a material constant.
+
+Default surface-efficient branching (b=3, lambda=0.65, gamma=0.65): surface multiplier 1.2675 and volume multiplier 0.8239 per generation, that is 26.75% more lateral area and 17.61% less material volume. This is a geometric result and does not claim gamma=0.65 is experimentally optimal.
+
+Finite network at depth 7: 1,093 segments, centreline length about 103.3 trunk lengths, material-volume-weighted connected path about 1.60 trunk lengths. The old code used a visual line width as a physical width, and v0.3 replaced it with a dimensionless cylindrical radius proxy.
+
+Material field. The default 200x200 export gives an analytic material proxy of 0.04530123 and an identical field integral, so the relative conservation error is at machine precision. The raster centre of mass is also checked against the analytical segment-weighted centre of mass. An earlier claim that the field was ready for PyBaMM was removed, since mapping a 2-D architecture into a battery PDE model is a separate task.
+
+Not established: battery capacity, rate capability, cycle life, an experimentally optimal fractal dimension or a validated sodium-ion electrode design. There is no transport PDE, kinetics, thermal, mechanics or degradation model.
+
+Test suite (16 tests): box counting on a straight line, branch-count and geometry invariants, the 2.55 similarity calculation and its planar caveat, surface and volume multipliers, the radius window, geometry versus analytic agreement, finite-depth box-slope sensitivity, De-Gennes limits and domain validation, branch-local charging time, field conservation, and raster-centroid fidelity and resolution invariance.
